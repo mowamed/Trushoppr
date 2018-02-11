@@ -1,0 +1,689 @@
+
+/* ==========================================================================
+   1.0 Fonts
+   ========================================================================== */ 
+/*Montserrat font*/
+@font-face {
+  font-family: 'montserrat';
+  src: url("../fonts/montserrat/montserrat-bold-webfont.eot");
+  src: url("../fonts/montserrat/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-bold-webfont.woff") format("woff"), url("../fonts/montserrat/montserrat-bold-webfont.ttf") format("truetype");
+  font-weight: 700; }
+
+@font-face {
+  font-family: 'montserrat';
+  src: url("../fonts/montserrat/montserrat-regular-webfont.eot");
+  src: url("../fonts/montserrat/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-regular-webfont.woff") format("woff"), url("../fonts/montserrat/montserrat-regular-webfont.ttf") format("truetype");
+  font-weight: 400; }
+@font-face {
+  font-family: 'montserrat';
+  src: url("../fonts/montserrat/montserrat-semibold-webfont.eot");
+  src: url("../fonts/montserrat/montserrat-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat/montserrat-semibold-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-semibold-webfont.woff") format("woff"), url("../fonts/montserrat/montserrat-semibold-webfont.ttf") format("truetype");
+  font-weight: 600; }
+@font-face {
+  font-family: 'montserrat';
+  src: url("../fonts/montserrat/montserrat-light-webfont.eot");
+  src: url("../fonts/montserrat/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat/montserrat-light-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-light-webfont.woff") format("woff"), url("../fonts/montserrat/montserrat-light-webfont.ttf") format("truetype");
+  font-weight: 300; }
+
+/*open sans font*/
+@font-face {
+	font-family: 'open_sans';
+	src:url('../fonts/open-sans/opensans-regular-webfont.eot');
+	src:url('../fonts/open-sans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/open-sans/opensans-regular-webfont.woff2') format('woff2'),
+		url('../fonts/open-sans/opensans-regular-webfont.woff') format('woff'),
+		url('../fonts/open-sans/opensans-regular-webfont.ttf') format('truetype');
+	font-weight: 400;
+
+}
+@font-face {
+	font-family: 'open_sans';
+	src:url('../fonts/open-sans/opensans-bold-webfont.eot');
+	src:url('../fonts/open-sans/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/open-sans/opensans-bold-webfont.woff2') format('woff2'),
+		url('../fonts/open-sans/opensans-bold-webfont.woff') format('woff'),
+		url('../fonts/open-sans/opensans-bold-webfont.ttf') format('truetype');
+	font-weight: 600;
+
+}
+
+
+/* ==========================================================================
+   2.0 Reset css
+   ========================================================================== */
+html, body { 
+	overflow-x: hidden;
+	font-size: 14px;
+	color: #7d7d7d;
+	font-family:'open_sans';
+	font-weight: 400;
+	line-height: 26px;
+	background: url(../image/body-background.jpg)no-repeat center center / cover;
+}
+.top-corner {
+	background: url(../image/top-corner.png)no-repeat left top;	
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'montserrat';
+	font-weight: 600;
+	margin: 0px;
+}
+ul{
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	outline: 0;
+}
+a:active,
+a:focus { 
+	outline: 0;
+    -moz-outline:0; 
+}
+a:hover{
+	text-decoration: none;
+}
+.sec-pad{
+	padding:150px 0px;
+}
+img{
+	max-width:100%; 
+	height: auto;
+}
+#preloader {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#fff; /* change if the mask should have another color then white */
+	z-index:10000; /* makes sure it stays on top */
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally one the screen */
+	top:50%; /* centers the loading animation vertically one the screen */
+	background-image:url(../image/loading.gif); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+#gmap {
+	display: block;
+	width: 100%;
+	height: auto;
+	pointer-events: none;
+	height: 500px;
+	background: #58B;
+}
+.angle-bg{
+	position: relative;
+	z-index: 1;
+}
+.angle-bg:before{
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	-webkit-transform: skewY(170deg);
+	transform: skewY(170deg);
+	width: 100%;
+	z-index: -1;
+}
+.carousel{
+	z-index: 2;
+	height: 750px;
+}
+.carousel-inner{
+	height: 100%;
+}
+.carousel-inner .item{
+	height: 100%;
+}
+.carousel-control {
+	width: auto;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image: none;
+	filter: none;
+	top: -20%;  
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+	background: rgba(255, 255, 255, 0.3);
+	width: 60px;
+	height: 60px;
+	padding-top: 10px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	border-radius: 50px;
+	font-family: 'FontAwesome';
+	text-shadow: none;
+	font-size: 40px; 
+}
+.carousel-control .glyphicon-chevron-left:hover, .carousel-control .glyphicon-chevron-right:hover {
+  background: rgba(255, 255, 255, 0.5); 
+}
+.carousel-control .glyphicon-chevron-left {
+left: 40px; 
+}
+.carousel-control .glyphicon-chevron-left:before {
+  content: '\f104'; 
+}
+.carousel-control .glyphicon-chevron-right {
+right: 40px; 
+}
+.carousel-control .glyphicon-chevron-right:before {
+  content: '\f105'; 
+}
+.modal-open .modal {
+    overflow-y: visible;
+    overflow-x:visible;
+    width: 100%;
+    height: 100%; 
+}
+.modal-dialog{
+	width: 80%;
+	top: 47%;
+	transform: translateY(-50%)!important;
+}
+.modal-body{
+	padding: 0;
+}
+section .section-text{
+	margin-bottom: 40px;
+}
+section .section-heading{
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	color: #525252;
+	text-transform: uppercase;
+	padding-bottom: 15px;
+}
+.menu .button {
+	margin-top: 20px
+}
+.btn{
+	display: inline-block;
+	text-align: center;
+	border-radius: 50px;
+	width: 150px;
+	line-height: 40px;
+	font-size: 16px;
+	background: transparent;
+	font-family: 'montserrat';
+	font-weight: 400;
+	transition: 0.5s;
+	margin-right: 10px;
+	margin-top: 0px;
+}
+.btn-primary{
+	color: #bd61c4;
+	border: 2px solid #bd61c4;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+	color: #f84e62;
+	background: #fff;
+	border-color: #fff;
+}
+.btn-secondary{
+	color:#f84e62;
+	border:2px solid #f84e62;  
+}
+.btn-secondary:hover{
+	color: #fff;
+	background: -webkit-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -o-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -moz-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: linear-gradient(to left, right, rgba(253,130,86,1), rgba(247,75,98,1));
+	color: #fff;
+	border: 2px solid transparent;
+}
+.bg-gradient{
+	background: -webkit-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -o-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -moz-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: linear-gradient(to left, right, rgba(253,130,86,1), rgba(247,75,98,1));
+}
+.bg-gradient:before{
+	background: -webkit-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -o-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -moz-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: linear-gradient(to left, right, rgba(253,130,86,1), rgba(247,75,98,1));
+}
+.bg-white:before{
+	background: #fff;
+}
+.overly{
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	-webkit-transform: skewY(170deg);
+	transform: skewY(170deg);
+	background: -webkit-linear-gradient(right, rgba(253,130,86,0.8), rgba(247,75,98,0.8));
+	background: -o-linear-gradient(right, (253,130,86,0.8), rgba(247,75,98,0.8));
+	background: -moz-linear-gradient(right, (253,130,86,0.8), rgba(247,75,98,0.8));
+	background: linear-gradient(to left, right, (253,130,86,0.8), rgba(247,75,98,0.8));	
+}
+.overly-alt{
+	position: absolute;
+	content: '';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: -webkit-linear-gradient(right, rgba(253,130,86,0.8), rgba(247,75,98,0.8));
+	background: -o-linear-gradient(right, (253,130,86,0.8), rgba(247,75,98,0.8));
+	background: -moz-linear-gradient(right, (253,130,86,0.8), rgba(247,75,98,0.8));
+	background: linear-gradient(to left, right, (253,130,86,0.8), rgba(247,75,98,0.8));
+}
+.z-tp{
+	position: relative;
+	z-index: 1;
+}
+.nplr{
+	padding: 0px;	
+}
+.npl{
+	padding-left:0px;	
+}
+.npr{
+	padding-right:0px;	
+}
+		
+
+/* ==========================================================================
+    3.0 Navbar Styling
+   ========================================================================== */
+.navbar-custom {
+	background-color: transparent;
+	border:none;
+	padding: 15px 0px;
+	-webkit-transition: padding .5s;
+	-moz-transition: padding .5s;
+	transition: padding .5s;
+} 
+.navbar-custom .navbar-brand {
+	padding: 0px;
+}   
+.navbar-custom .navbar-toggle {
+	border: none;
+	border-radius: 0px;
+	text-transform: uppercase;
+	color: white;
+	font-size: 12px;
+	margin-right: 0px;
+}
+.navbar-custom ul li{
+	margin: 0 15px;
+}
+.navbar-custom ul li:last-chlid{
+	margin-right:0px; 
+}
+.navbar-custom ul li a{
+	color: #fff;
+	font-size: 12px;
+	font-family: 'montserrat';
+	font-weight: 400;
+	text-transform: uppercase;
+	padding: 15px 0;
+}
+.navbar-custom ul li a:hover{
+	background:transparent;
+	color: #000; 
+}
+.navbar-nav li a.active{
+	color: #000;
+}
+
+.navbar-custom.affix{
+	background: -webkit-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -o-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -moz-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: linear-gradient(to left, right, rgba(253,130,86,1), rgba(247,75,98,1));
+	padding: 10px 0px;
+	box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow:0px 0px 5px #000;
+	-moz-box-shadow:0px 0px 5px #000;
+	border-bottom: 0px; 
+}
+.logo {
+	margin-left: -50px !important;
+}
+/* ==========================================================================
+   4.0 Banner Styling
+   ========================================================================== */
+.banner-content{
+	background: transparent;
+	/* background: url(../image/background.jpg)no-repeat center center / cover; */
+}
+.banner-content:before {
+	background: #fff;
+	height: 50%;
+	top: 80%;
+	z-index: 1;
+}
+.banner-content .intro-text{
+	margin-top: 100px;
+	padding-top: 150px;
+	z-index: 100;
+}
+.banner-content .intro-text p{
+	line-height: 18px;
+}
+.banner-content .intro-text .intro-heading{
+	padding-bottom: 30px;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-family:'montserrat';
+	font-weight: 600;
+}
+.banner-content .mockup{
+	position: absolute;
+	right: 50px;
+	top: 250px;
+	max-width: 200px;
+	z-index: 1;
+}
+.banner-content .mockup img{
+	width: 100%
+}
+/* ==========================================================================
+   5.0 About Styling
+   ========================================================================== */
+.about-app{
+	background:transparent repeat scroll 0 0;
+	padding-bottom: 80px;
+}
+.about-app:before{
+	top: 0;
+}  
+.about-app .abt-text{
+	padding-top: 50px;
+}
+.overview-details{
+	margin-bottom: 50px;
+}
+.overview-details:last-child{
+	margin-bottom: 0;
+}
+.about-app .abt-text h2{
+	color: #000;
+	padding-bottom: 25px;
+	font-size: 46px;
+}
+.about-app .abt-text h2 span{
+	font-family: 'montserrat';
+	font-weight: 300;
+}
+.about-app .abt-text .counter-wrapper{
+	margin-top: 25px;
+}
+.about-app .abt-text .counter-wrapper li{
+	display: inline-block;
+	border-right: 1px solid #959595;
+	padding: 0 40px;
+}
+.about-app .abt-text .counter-wrapper li:first-child{
+	padding-left: 0px;
+}
+.about-app .abt-text .counter-wrapper li:last-child{
+	border-right:none;
+}
+.about-app .abt-text .counter-wrapper li span{
+	display: inline-block;
+	line-height: 18px;
+	color: #000;
+}
+.about-app .abt-text .counter-wrapper li .counter{
+	font-size: 48px;
+	font-family: 'montserrat';
+	margin-right: 10px;
+}
+.about-app .abt-text a.btn i{
+	margin-right: 5px;
+}
+/* ==========================================================================
+    8.0 Specification Styling
+   ========================================================================== */ 
+.specification .specificationspecification-holder .specification-mockup img{
+	max-width: 100%;
+}
+
+.specification .specification-holder .left-specification .icon{
+	float: right;
+}
+.specification .specification-holder .left-specification .specification-text{
+	margin-right: 70px;
+}
+.specification .specification-holder .right-specification .icon{
+	float: left;
+}
+.specification .specification-holder .right-specification .specification-text{
+	margin-left: 70px;
+}
+.specification .specification-holder .left-specification{
+	text-align: right;
+}
+.specification .specification-holder .specification-list{
+	margin-top: 10px;
+	padding: 20px;
+	transition: .6s;
+	cursor: default;
+}
+.specification .specification-holder .specification-list:hover{
+	box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+}
+.specification .specification-holder .specification-list:hover .icon{
+	background: -webkit-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -o-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: -moz-linear-gradient(right, rgba(253,130,86,1), rgba(247,75,98,1));
+	background: linear-gradient(to left, right, rgba(253,130,86,1), rgba(247,75,98,1));
+	color: #fff;
+	border: 2px solid transparent;
+}
+.specification .specification-holder .specification-list .icon{
+	font-size: 18px;
+	border: 2px solid #f84e62;
+	border-radius: 50px;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 45px;
+	transition: 0.5s;
+	color: #f84e62;
+}
+.specification .specification-holder .specification-list .specification-title{
+	font-family: 'montserrat';
+	font-weight: 400;
+	font-size: 20px;
+	color: #000;
+	padding-top: 10px;
+}
+.specification .specification-holder .specification-list p{
+	color: #898989;
+	padding-top: 20px;
+}
+/* ==========================================================================
+   16.0  blog Styling
+   ========================================================================== */ 
+.blog a{
+	transition:0.5s; 
+}  
+.blog a:hover{
+	color: #f84e62; 
+}
+.blog-about{
+	padding: 15px 0;
+	margin: 0; 
+}
+.blog-about li{
+	margin-right: 15px;
+	display: inline-block;
+}
+.blog-about li a{
+	font-size: 13px;
+	color: #cfcfcf;
+	transition: 0.5s;
+}
+.blog-about li i{
+	color: #cfcfcf;
+	margin-right: 5px;
+}
+.blog .blog-col a img{
+	width: 100%;
+	transition: .5s;
+}
+.blog .blog-col a img:hover{
+	opacity: 0.7;
+}
+.blog .blog-col .blog-text h4 a{
+	font-size: 20px;
+	font-family: 'montserrat';
+	font-weight: 600;
+	color: #4e4e4e;
+	padding: 0px 0 8px 0;
+	margin-bottom: 10px;
+	display: block;
+	text-transform: capitalize;
+}
+.blog .blog-col .blog-text h4 a:hover{
+	color: #f84e62;
+}
+/* ==========================================================================
+   18.0 Contact Styling
+   ========================================================================== */
+.contact{
+	background: transparent;
+}
+.contact .custom-form{
+	padding: 25px;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+	background: #fff;
+}
+.btn-send{
+	margin-top: 10px;
+	font-size: 18px;
+	color: #fff;
+	width: 140px;
+	line-height:45px;
+	border-radius:50px;
+	border:0px; 
+	background: #bd61c4;
+}
+.btn-sign {
+	color: #fff;
+	background: #bd61c4;
+}
+.contact .custom-form .form-group{
+	margin-bottom: 40px;
+}
+.contact .custom-form span{
+	font-size: 18px;
+	color: #898989;
+}
+.contact .custom-form .form-control{
+	border-radius: 0px;
+	border:none;
+	border-bottom: 1px solid #ebebeb;
+	margin-top: 10px;
+	background: transparent;
+	height: 40px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+
+}
+.contact .custom-form .form-control:focus{
+	border-bottom: 1px solid #f84e62;
+} 
+.contact .custom-form textarea.form-control{
+	height: 100px;
+}
+.contact .custom-form .has-error .form-control{
+    border-bottom: 1px solid #e74c3c;
+}
+.contact .contact-holder{
+	background: transparent;
+	padding:50px 25px;
+	position: relative;
+	margin-top: -230px;
+}
+.contact .contact-holder h3{
+	margin-bottom: 25px;
+
+}
+.contact .contact-holder .contact-details{
+	margin-top: 30px;
+}
+.contact .contact-holder .contact-details li{
+	margin-top: 20px;
+}
+.contact .contact-holder .contact-details li:first-child{
+	margin-top: 0px;
+}
+.contact .contact-holder .contact-details li i{
+	font-size: 16px;
+	border: 2px solid #f84e62;
+	border-radius: 50px;
+	text-align: center;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 32px;
+	transition: 0.5s;
+	color: #f84e62;
+	margin-right: 8px;  
+}
+.contact .contact-holder .contact-details li span{
+	font-size: 16px;
+	color: #333;
+}
+.contact-title{
+	text-align: center;
+}
+
+/* ==========================================================================
+   19.0 Footer Styling
+   ========================================================================== */
+.footer-wrapper{
+	background: transparent;
+	padding: 50px 0px;
+}
+.footer-wrapper .social-holder{
+	text-align: center;
+}
+.footer-wrapper .social-holder a{
+	margin-right: 15px;
+}
+.footer-wrapper .social-holder a:last-child{
+	margin-right: 0px;
+}
+.footer-wrapper .social-holder i{
+	font-size: 14px;
+	height: 30px;
+	width: 30px;
+	background: #e1e1e1;
+	color: #636363;
+	border-radius: 50px;
+	padding: 9px;
+
+}
+.footer-wrapper .address{
+	font-size: 14px;
+	color: #b7b7b7;
+	text-align: left;
+}
